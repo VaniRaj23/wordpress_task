@@ -1,0 +1,16 @@
+---
+# defaults file for firewall
+# vars file for word-press
+#PHP Settings
+php_modules: [ 'php', 'php-curl', 'php-gd', 'php-mbstring', 'php-xml', 'php-xmlrpc', 'php-soap', 'php-intl', 'php-zip' ]
+ 
+#MySQL Settings
+mysql_root_password: "your-root-password"
+mysql_db: "wpdb"
+mysql_user: "wpuser"
+mysql_password: "password"
+ 
+#HTTP Settings
+http_host: "wp.check.com"
+http_conf: "wp.check.com.conf"
+http_port: "80"

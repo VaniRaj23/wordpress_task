@@ -1,0 +1,21 @@
+---
+- name: "Installation of word-press"
+  hosts: hosts
+  gather_facts: no
+  become: yes 
+  tasks: 
+
+     - include_role:
+           name: apache
+
+     - include_role: 
+           name: php
+
+     - include_role:
+           name: mysql
+
+     - include_role:
+           name: word-press
+
+     - include_role:
+           name: firewall

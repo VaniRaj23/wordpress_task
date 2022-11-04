@@ -1,0 +1,12 @@
+---
+# tasks file for php
+- name: Install PHP Remi Repository
+  yum: name=http://rpmfind.net/linux/remi/enterprise/9/modular/x86_64/php-8.2.0~RC4-5.el9.remi.x86_64.rpm update_cache=yes state=latest
+ #name=http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+- name: Enable PHP Remi Repository
+  command: dnf module reset php -y
+  command: dnf module enable php:remi-7.4 -y
+ 
+- name: Install PHP Extensions
+  yum: name={{ item }} update_cache=yes state=latest
+  loop: "{{ php_modules }}"
